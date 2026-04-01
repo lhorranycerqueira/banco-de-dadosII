@@ -23,13 +23,39 @@ insert into compras values (101, 1, 10), (102, 2, 20), (103, 2, 30);
 -- primeiro inner join
      select Jogadores.nome_usuario, Jogos.titulo
       from Jogadores
-      left join Jogos on Jogadores.id_jogador = Jogos.id_jogo;
+      inner join Jogos on Jogadores.id_jogador = Jogos.id_jogo;
+      
+-- primeiro inner join certo agora
+
+select Jogadores.nome_usuario, Jogos.titulo
+from Jogadores
+inner join Compras 
+on Jogadores.id_jogador = Compras.id_jogador_fk
+inner join Jogos 
+on Compras.id_jogo_fk = Jogos.id_jogo;
       
 -- segundo é left join
       select Jogadores.nick_name, Skins.nome_skin
       from Jogadores
       left join Skins ON Jogadores.id_aluno = Skins.id_dono;
+      
+      -- segundo left join que tb funciona agora
+select Jogadores.nome_usuario, Jogos.titulo
+from Jogadores
+left join Compras 
+on Jogadores.id_jogador = Compras.id_jogador_fk
+left join Jogos 
+on Compras.id_jogo_fk = Jogos.id_jogo;
 
 -- segundo é left join tambémm
+
+select Jogos.titulo, Jogadores.nome_usuario
+from Jogos
+left join Compras 
+on Jogos.id_jogo = Compras.id_jogo_fk
+left join Jogadores 
+on Compras.id_jogador_fk = Jogadores.id_jogador;
+
+
 
 
