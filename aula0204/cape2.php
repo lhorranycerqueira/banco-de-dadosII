@@ -5,6 +5,6 @@ $matriculaAtiva = true;
 
 
 echo "Aluno(a): " . $nome;
-echo "\n Idade: " . $idade;
+echo "<br> Idade: " . $idade;
 
 ?>
