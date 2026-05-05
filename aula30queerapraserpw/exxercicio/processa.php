@@ -6,7 +6,7 @@ $senha = '';
 
 
 try {
-    $conexao = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8",  $usuario, $senha);
+    $conexao = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOExeception $e) {
     die("Erro ao conectar com o banco de dados: " . $e->getMessage());
