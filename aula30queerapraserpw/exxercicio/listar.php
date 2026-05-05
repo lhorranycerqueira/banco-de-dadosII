@@ -52,5 +52,6 @@ $mensagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     <br>
     <a href="index.html">Voltar para o Formulário</a>
+    <!-- o erro q ta dando Fatal error: Uncaught Error: Call to undefined method PDO::setAtributte() in C:\xampp\htdocs\projeto_site\listar.php:10 Stack trace: #0 {main} thrown in C:\xampp\htdocs\projeto_site\listar.php on line 10 -->
 </body>
 </html>
