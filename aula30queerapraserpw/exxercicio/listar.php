@@ -8,13 +8,9 @@ $senha = '';
 try {
     $conexao = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
 
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // ✅ setAttribute
-} catch(PDOException $e) { // ✅ PDOException
-
-    $conexao->setAtributte(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOExeception $e) {
-
-    die("Erro de Conexão: " . $e->getMessage()); 
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+} catch(PDOException $e) { 
+     die("Erro de Conexão: " . $e->getMessage()); 
 }
 
 $sql = "SELECT id, nome, email, mensagem FROM contatos";
@@ -54,11 +50,11 @@ $mensagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($mensagens as $linha): ?>
             <tr>
                 <td> <?php echo $linha['id']; ?></td>
-                <td> <?php echo $linha['nome'] ?></td>
+                <td> <?php echo $linha['nome']; ?></td>
                 <td> <?php echo $linha['email']; ?></td>
                 <td> <?php echo $linha['mensagem']; ?></td>
                 <td>
-                    <a href="deletar.php?id=<?php echo $linha['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir esse sobrevivente/mensagem?');>Excluir</a>
+                    <a href="deletar.php?id=<?php echo $linha['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir esse sobrevivente/mensagem?');">Excluir</a>
                 </td>
             </tr>
             <?php endforeach; ?>
