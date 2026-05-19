@@ -54,6 +54,7 @@ $mensagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td> <?php echo $linha['email']; ?></td>
                 <td> <?php echo $linha['mensagem']; ?></td>
                 <td>
+                    <a href="editar.php?id=<?php echo $linha['id']; ?>" class="btn-editar">Editar</a>
                     <a href="deletar.php?id=<?php echo $linha['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir esse sobrevivente/mensagem?');">Excluir</a>
                 </td>
             </tr>
