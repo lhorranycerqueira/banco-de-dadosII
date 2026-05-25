@@ -1,12 +1,12 @@
 <?php
 $host = 'localhost';
 $dbname = 'projeto_site';
-$dbname = 'root';
+$usuario = 'root';
 $senha = '';
 
 try {
     $conexao = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ATTR_ERRMODE_EXCEPTION);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
     if (isset($_POST['id'], $_POST['nome'], $_POST['email'], $_POST['mensagem'])) {
         $id = $_POST['id'];
